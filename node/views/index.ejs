@@ -1,0 +1,20 @@
+<%- include('./header.ejs') %>
+
+<div class="container">
+
+    <form action="/submit" method="post">
+        <input id="name" name="name" class="input_name" required />
+        <button type="submit" class="btn_save">Salvar</button>
+    </form>
+
+    <div class="box_items">
+        <% for (const people of peoples) { %>
+            <div class="item"><%=people.name%><a href="/delete/<%=people.id%>"><span class="btn_remove">excluir</span></a></div>
+        <% }; %>
+    </div>
+
+</div>
+
+
+<%- include('./footer.ejs') %>
+

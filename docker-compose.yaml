@@ -1,0 +1,49 @@
+#!/bin/bash
+version: '3'
+
+services:
+
+  db:
+      image: mysql:5.7
+      command: --innodb-use-native-aio=0
+      container_name: desafio02-db
+      ports:
+        - 3306:3306
+      restart: always
+      tty: true #habilita interação
+      volumes:
+        - ./mysql:/var/lib/mysql
+      environment:
+        - MYSQL_DATABASE=nodedb
+        - MYSQL_ROOT_PASSWORD=root
+
+  node:
+      build:
+        context: node
+      image: philippeberto/desafio02-docker
+      container_name: desafio02-node
+      command: sh -c "npm install && node index"
+      environment:
+        - PORT=5000
+        - DATABASE_URL=mysql://root:root@desafio02-db/nodedb
+      volumes:
+        - ./node:/usr/src/app
+      tty: true
+      depends_on:
+        - db
+
+  nginx:
+    build: 
+        context: ./nginx
+    image: philippeberto/nginx-desafio02-docker
+    container_name: desafio02-nginx
+    ports:
+      - 8080:80
+    depends_on:
+      - node
+
+
+networks:
+  default:
+    name: node-network
+    driver: bridge

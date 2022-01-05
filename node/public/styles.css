@@ -1,0 +1,87 @@
+html {
+    background-color: #000;
+    color: rgb(233, 233, 233);
+    text-align: center;
+    margin: 0;
+}
+
+body { margin: 0; padding: 0; }
+
+
+.header {
+    color: rgb(255, 225, 0);
+    padding: 12px 0;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.container {
+    background: url("https://portal.code.education/bundles/sonbase/img/lms/img-footer-courses-dark.png") no-repeat center bottom, url('https://portal.code.education/bundles/sonbase/img/lms/satelite-dark.png') no-repeat top 200px left 80px, url('https://portal.code.education/bundles/sonbase/img/lms/foguete-dark.png') no-repeat top 260px right 80px;
+    background-color: rgba(50,50,50,0.6);
+    height: calc(100vh - 160px);
+    padding: 18px 0;
+    overflow: auto;
+}
+
+.box_items {
+    margin: 20px auto;
+    max-width: 600px;
+   
+}
+
+.input_name {
+    padding: 8px 14px;
+}
+
+.btn_save {
+    border: none;
+    border-radius: 5px;
+    background: green;
+    color: white;
+    font-size: 16px;
+    padding: 9px 12px;
+    cursor: pointer;
+}
+
+.btn_save:focus {
+    background: rgb(0, 155, 0);
+}
+
+.input_name:focus {
+    outline: none;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 48px;
+    border: solid #7e7e7e;
+    border-width: 0 1px 1px 1px;
+}
+
+.item:first-child {
+    border: 1px solid #7e7e7e;
+}
+
+.btn_remove {
+    color: white;
+    padding: 2px 8px;
+    background-color: rgb(211, 0, 0);
+    border-radius: 20px;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.item a {
+    text-decoration: none;
+}
+
+.item a:active {
+    text-decoration: none;
+}
+
+.footer {
+    color: rgb(255, 225, 0);
+    padding: 12px 0;
+}
