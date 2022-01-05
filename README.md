@@ -16,13 +16,4 @@ O projeto deve ser executado normalmente com o comando abaixo.
 docker-compose up
 ```
 
-Caso haja algum motivo para execução dos containers separadamente, pode ser feito
-
-```
-docker-compose up db
-
-docker-compose up node
-
-docker-compose up nginx
-
-```
+Acesse a seguir o endereço http://localhost:8080/
